@@ -27,3 +27,14 @@ func Map[T any] (vv []T, fn func (v T, i int) T) []T {
 
 	return d
 }
+
+func Find[T any] (vv []T, fn func (v T, i int) bool) (T, bool) {
+	for i, v := range vv {
+		if fn(v, i) {
+			return v, true
+		}
+	}
+
+	var notFound T
+	return notFound, false
+}
