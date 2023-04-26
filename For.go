@@ -1,29 +1,29 @@
 package slicex
 
-func (s *Slicex[T]) For (fn func (v T, i int)) {
-	for i, v := range s.Data {
+func  ForEach[T any] (vv []T, fn func (v T, i int)) {
+	for i, v := range vv {
 		fn(v, i)
 	}
 }
 
-func (s *Slicex[T]) Filter (fn func (v T, i int) bool) {
-	d := make([]T, 0, s.Length())
+func Filter[T any] (vv []T, fn func (v T, i int) bool) []T {
+	d := make([]T, 0, len(vv))
 
-	for i, v := range s.Data {
+	for i, v := range vv {
 		if fn(v, i) {
 			d = append(d, v)
 		}
 	}
 
-	s.Data = d
+	return d
 }
 
-func (s *Slicex[T]) Map (fn func (v T, i int) T) {
-	d := make([]T, 0, s.Length())
+func Map[T any] (vv []T, fn func (v T, i int) T) []T {
+	d := make([]T, 0, len(vv))
 
-	for i, v := range s.Data {
+	for i, v := range vv {
 		d = append(d, fn(v, i))
 	}
 
-	s.Data = d
+	return d
 }

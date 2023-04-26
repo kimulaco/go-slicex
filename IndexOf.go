@@ -4,8 +4,8 @@ import (
 	"reflect"
 )
 
-func (s *Slicex[T]) IndexOf (v T) int {
-	for i, d := range s.Data {
+func IndexOf[T any] (vv []T, v T) int {
+	for i, d := range vv {
 		if reflect.DeepEqual(d, v) {
 			return i
 		}

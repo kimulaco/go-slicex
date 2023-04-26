@@ -1,5 +1,5 @@
 package slicex
 
-func (s *Slicex[T]) Contains (v T) bool {
-	return s.IndexOf(v) != -1
+func Contains[T any] (vv []T, v T) bool {
+	return IndexOf(vv, v) != -1
 }
