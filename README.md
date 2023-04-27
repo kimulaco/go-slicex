@@ -1,5 +1,9 @@
 # go-slicex
 
+[![Test](https://github.com/kimulaco/go-slicex/actions/workflows/test.yml/badge.svg)](https://github.com/kimulaco/go-slicex/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/kimulaco/go-slicex/branch/main/graph/badge.svg?token=33P1XO6YK3)](https://codecov.io/gh/kimulaco/go-slicex)
+[![License MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 Utility functions module for handling slice by go.
 
 ## Usage
