@@ -1,12 +1,12 @@
 package slicex
 
-func  ForEach[T any] (vv []T, fn func (v T, i int)) {
+func ForEach[T any](vv []T, fn func(v T, i int)) {
 	for i, v := range vv {
 		fn(v, i)
 	}
 }
 
-func Filter[T any] (vv []T, fn func (v T, i int) bool) []T {
+func Filter[T any](vv []T, fn func(v T, i int) bool) []T {
 	d := make([]T, 0, len(vv))
 
 	for i, v := range vv {
@@ -18,7 +18,7 @@ func Filter[T any] (vv []T, fn func (v T, i int) bool) []T {
 	return d
 }
 
-func Map[T any] (vv []T, fn func (v T, i int) T) []T {
+func Map[T any](vv []T, fn func(v T, i int) T) []T {
 	d := make([]T, 0, len(vv))
 
 	for i, v := range vv {
@@ -28,7 +28,7 @@ func Map[T any] (vv []T, fn func (v T, i int) T) []T {
 	return d
 }
 
-func Find[T any] (vv []T, fn func (v T, i int) bool) (T, bool) {
+func Find[T any](vv []T, fn func(v T, i int) bool) (T, bool) {
 	for i, v := range vv {
 		if fn(v, i) {
 			return v, true
