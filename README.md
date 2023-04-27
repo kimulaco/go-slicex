@@ -6,6 +6,12 @@
 
 Utility functions module for handling slice by go.
 
+## Install
+
+```bash
+go get github.com/kimulaco/go-slicex
+```
+
 ## Usage
 
 ```go
