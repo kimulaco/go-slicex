@@ -7,9 +7,14 @@ import (
 )
 
 func TestRemoveIndex(t *testing.T) {
-	assert.Equal(t, RemoveIndex([]int{1, 2, 3}, 1), []int{1, 3})
+	assert.Equal(t, []int{1, 3}, RemoveIndex([]int{1, 2, 3}, 1))
+
+	assert.Equal(t, []int{1, 2, 3}, RemoveIndex([]int{1, 2, 3}, 4))
+	assert.Equal(t, []int{1, 2, 3}, RemoveIndex([]int{1, 2, 3}, -1))
 }
 
 func TestRemoveValue(t *testing.T) {
-	assert.Equal(t, RemoveValue([]int{1, 2, 3}, 2), []int{1, 3})
+	assert.Equal(t, []int{1, 3}, RemoveValue([]int{1, 2, 3}, 2))
+
+	assert.Equal(t, []int{1, 2, 3}, RemoveValue([]int{1, 2, 3}, 4))
 }
