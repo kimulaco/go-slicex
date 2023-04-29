@@ -29,6 +29,9 @@ s = slicex.RemoveIndex([]string{"1", "2", "3"}, 2) // []string{"1", "2"}
 // RemoveValue
 s = slicex.RemoveValue([]string{"1", "2", "3"}, "2") // []string{"1", "3"}
 
+// RemoveValueAll
+s = slicex.RemoveValueAll([]string{"1", "2", "2", "3", "2"}, "2") // []string{"1", "3"}
+
 // ForEach
 slicex.ForEach([]string{"1", "2", "3"}, func(v string, i int) {
     // v: "1", "2", "3"
