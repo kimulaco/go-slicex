@@ -1,5 +1,9 @@
 package slicex
 
+import (
+	"reflect"
+)
+
 func RemoveIndex[T any](vv []T, i int) []T {
 	if i < 0 || i >= len(vv) {
 		return vv
@@ -16,4 +20,10 @@ func RemoveValue[T any](vv []T, v T) []T {
 	}
 
 	return RemoveIndex(vv, i)
+}
+
+func RemoveValueAll[T any](vv []T, v T) []T {
+	return Filter(vv, func(_v T, i int) bool {
+		return !reflect.DeepEqual(_v, v)
+	})
 }
